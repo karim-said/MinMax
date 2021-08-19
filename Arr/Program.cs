@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
- //MinMax10==================================================
+ //MinMax11==================================================
 namespace Arr
 {
     class Program
@@ -23,19 +23,20 @@ namespace Arr
                 Console.Write("now = ");
                 now = Convert.ToInt32(Console.ReadLine());
 
-                if (now < min)
+                if (now <= min)
                 {
                     imax = i + 1;
                     min = now;
                 }
-                if (now > max)
+
+                if (now >= max)
                 {
                     imin = i + 1;
                     max = now;
                 }
             }
 
-            Console.WriteLine("ex = {0}\n", imin < imax ? imin : imax);
+            Console.WriteLine("ex = {0}\n", imin > imax ? imin : imax);
             Console.ReadKey();
         }
     }
