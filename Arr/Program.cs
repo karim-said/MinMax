@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
- //MinMax1==================================================
+ //MinMax2==================================================
 namespace Arr
 {
     class Program
@@ -8,22 +8,28 @@ namespace Arr
         static void Main(string[] args)
         {
 
-           
-            int _min = 0, _max = 0, N, _NOW;
+            double a, b, S_min = 0;
+            int N;
 
             Console.Write("You need enter a value for N variable ");
 
             N = Convert.ToInt32(Console.ReadLine());
-
-            for (int i = 0; i < N; i++)
+            Console.Write("a = ");
+            a = double.Parse(Console.ReadLine());
+            Console.Write("b = ");
+            b = double.Parse(Console.ReadLine());
+            S_min = a * b;
+            for (int i = 0; i < N - 1; i++)
             {
-                Console.Write("Now - ");
-                _NOW = Convert.ToInt32(Console.ReadLine());
-                if (_NOW < _min) _min = _NOW;
-                if (_NOW > _max) _max = _NOW;
+                Console.Write("a = ");
+                a = double.Parse(Console.ReadLine());
+                Console.Write("b = ");
+                b = double.Parse(Console.ReadLine());
+                if ((a * b) < S_min) S_min = a * b;
             }
 
-            Console.WriteLine($"Min = {_min}\nMax = {_max}");
+            Console.WriteLine($"S_min = {S_min}\n");
+
             Console.ReadKey();
 
         }
