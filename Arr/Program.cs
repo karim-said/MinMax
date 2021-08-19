@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
- //MinMax1 ==================================================
+ //MinMax1==================================================
 namespace Arr
 {
     class Program
