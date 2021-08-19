@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Runtime.InteropServices;
- //MinMax8==================================================
+ //MinMax9==================================================
 namespace Arr
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int f_min, l_min, now;
+            int f_max, l_max, now;
             int N, f_i = 1, l_i = 1;
 
             Console.Write("You need enter a value for N variable ");
@@ -15,24 +15,24 @@ namespace Arr
             N = Convert.ToInt32(Console.ReadLine());
             Console.Write("now = ");
             now = Convert.ToInt32(Console.ReadLine());
-            f_min = now;
-            l_min = now;
+            f_max = now;
+            l_max = now;
 
             for (int i = 1; i < N; i++)
             {
                 Console.Write("now = ");
                 now = Convert.ToInt32(Console.ReadLine());
 
-                if (now < f_min)
+                if (now > f_max)
                 {
                     f_i = i + 1;
-                    f_min = now;
+                    f_max = now;
                 }
 
-                if (now <= l_min)
+                if (now >= l_max)
                 {
                     l_i = i + 1;
-                    l_min = now;
+                    l_max = now;
                 }
             }
 
