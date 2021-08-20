@@ -1,42 +1,38 @@
 ﻿using System;
 using System.Runtime.InteropServices;
- //MinMax11==================================================
+ //MinMax12==================================================
 namespace Arr
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int min, max, now;
-            int N, imax = 1, imin = 1;
-
+            double min=0, now;
+            int N;
+            bool flag = true;
             Console.Write("You need enter a value for N variable ");
 
             N = Convert.ToInt32(Console.ReadLine());
-            Console.Write("now = ");
-            now = Convert.ToInt32(Console.ReadLine());
-            min = now;
-            max = now;
+           
+              
 
-            for (int i = 1; i < N; i++)
+            for (int i = 1; i <= N; i++)
             {
+                
+                
                 Console.Write("now = ");
-                now = Convert.ToInt32(Console.ReadLine());
+                now = Convert.ToDouble(Console.ReadLine());
 
-                if (now <= min)
+                if(now>min && flag)
                 {
-                    imax = i + 1;
                     min = now;
+                    flag = false;
                 }
-
-                if (now >= max)
-                {
-                    imin = i + 1;
-                    max = now;
-                }
+                if (now < min && now >0) min = now;
+                
             }
 
-            Console.WriteLine("ex = {0}\n", imin > imax ? imin : imax);
+            Console.WriteLine("min -> " + min);
             Console.ReadKey();
         }
     }
