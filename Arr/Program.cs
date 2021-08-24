@@ -1,34 +1,39 @@
 ﻿using System;
 using System.Runtime.InteropServices;
- //MinMax13 ==================================================
+ //MinMax14 ==================================================
 namespace Arr
 {
     class Program
     {
         static void Main(string[] args)
         {
-            double max=0,i_odd=0, now;
-            int N;
-      
-            Console.Write("You need enter a value for N variable ");
-            N = Convert.ToInt32(Console.ReadLine());
-           
-            
-            for (int i = 1; i <= N; i++)
+            double min=0,i_=0, now,B;
+            bool flag=true;
+
+          
+
+            Console.Write("You need enter a value for B variable ");
+            B = Convert.ToDouble(Console.ReadLine());
+
+            for (int i = 1; i <= 10; i++)
             {
                           
                 Console.Write("now = ");
                 now = Convert.ToDouble(Console.ReadLine());
-
-                if(now % 2 == 1 && now > max)
+                if(now>B && flag)
                 {
-                    max = now;
-                    i_odd = i;
+                    min = now;
+                    flag = false;
+                }    
+                if(now > B && now <= min)
+                {
+                    min = now;
+                    i_ = i;
                 }
                                 
             }
 
-            Console.WriteLine("i_odd -> " + i_odd);
+            Console.WriteLine("min -> " + min + "            " + "i_ -> " + i_);
             Console.ReadKey();
         }
     }
