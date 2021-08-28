@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Runtime.InteropServices;
- //MinMax16 ==================================================
+ //MinMax17 ==================================================
 namespace Arr
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int min=0,count=0, now;
+            int max=0,count=0, now;
             bool flag=true;
 
             int N;
@@ -25,21 +25,20 @@ namespace Arr
 
                 if (flag)
                 {
-                    min = now;                    
+                    max = now;                    
                     flag = false;
                 }
 
-
-                if (now < min)
+                count++;
+                if (now >= max)
                 {
-                    min = now;
+                    max = now;
                     count = 0;
                 }
-                count++;
-                                
+                                                
             }
 
-            Console.WriteLine("count -> " + Convert.ToInt32(N - count) );
+            Console.WriteLine("count -> " + count );
             Console.ReadKey();
         }
     }
