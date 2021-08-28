@@ -1,42 +1,45 @@
 ﻿using System;
 using System.Runtime.InteropServices;
- //MinMax15 ==================================================
+ //MinMax16 ==================================================
 namespace Arr
 {
     class Program
     {
         static void Main(string[] args)
         {
-            double max=0,i_=0, now,B,C;
+            int min=0,count=0, now;
             bool flag=true;
 
-         
+            int N;
 
-            Console.Write("You need enter a value for B variable ");
-            B = Convert.ToDouble(Console.ReadLine());
-            Console.Write("You need enter a value for C variable ");
-            C = Convert.ToDouble(Console.ReadLine());
+            Console.Write("You need enter a value for N variable ");
+            N = Convert.ToInt32(Console.ReadLine());
 
-            for (int i = 1; i <= 10; i++)
+                       
+
+            for (int i = 1; i <= N; i++)
             {
                           
                 Console.Write("now = ");
-                now = Convert.ToDouble(Console.ReadLine());
-                if(now>B && now < C && flag)
+                now = Convert.ToInt32(Console.ReadLine());
+
+                if (flag)
                 {
-                    max = now;
-                    i_ = i;
+                    min = now;                    
                     flag = false;
-                }    
-                if(now > B && now < C && now > max)
-                {
-                    max = now;
-                    i_ = i;
                 }
+
+
+                if (now < min)
+                {
+                    min = now;
+                    count = 0;
+                }
+                count++;
                                 
             }
 
-            Console.WriteLine("max -> " + max + "            " + "i_ -> " + i_);
+            Console.WriteLine("count -> " + Convert.ToInt32(N - count) );
             Console.ReadKey();
         }
     }
